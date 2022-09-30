@@ -26,4 +26,8 @@ main {
 .offcanvas-top{
     height: fit-content;
 }
+#boton-desplegable{
+    display: flex;
+    justify-content: space-between;
+}
 

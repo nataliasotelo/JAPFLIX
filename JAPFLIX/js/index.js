@@ -69,7 +69,9 @@ function showMovies(array){
         if (movie){
             document.getElementById("offCanvasTopLabel").innerText = movie.title;
             document.getElementById("offCanvasBody").innerText = movie.overview;
+            document.getElementById("categorias").innerHTML = movie.name;
             //document.getElementById("year").innerText = movie.release_date;
+
         }
     }
     
