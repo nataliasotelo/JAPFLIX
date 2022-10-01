@@ -63,23 +63,27 @@ function showMovies(array){
         document.getElementById("lista").innerHTML = htmlContentToAppend;    }
     }
 
-
     const showMoreData = (movieID) => {
-        const movie = filteredMovies.find(({id}) => id === movieID);
+      const movie = filteredMovies.find(({id}) => id === movieID);
         if (movie){
+          let genres = movie.genres[0].name; 
+          for(let i = 1; i < movie.genres.length; i++){ 
+            genres +=  ", " + movie.genres[i].name   };
             document.getElementById("offCanvasTopLabel").innerText = movie.title;
             document.getElementById("offCanvasBody").innerText = movie.overview;
-            document.getElementById("categorias").innerHTML = movie.name;
-            //document.getElementById("year").innerText = movie.release_date;
-
+            document.getElementById("categorias").innerHTML = genres;
+         
+            let htmlContentToAppend = `
+            <li><a class="dropdown-item" href="#"> Year ${movie.release_date} </a></li>
+            <li><a class="dropdown-item" href="#"> </a></li>
+            <li><a class="dropdown-item" href="#"> </a></li>
+            <li><a class="dropdown-item" href="#"> </a></li>`
+              document.getElementById("btnMore").innerHTML = htmlContentToAppend;
         }
     }
     
-
-    // agregar hr, generos y  menu desplegable
-    
-
-
+  
+   
 
 
 
